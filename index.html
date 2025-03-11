@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .video-title-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 10%;
+    }
+    .video-title {
+      width: 100%;
+      text-align: center;
+      font-style: italic;
+      font-size: 1em; 
+    }
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 15px; /* Space between videos */
+      max-width: 1500px; /* Adjust to your preferred width */
+      margin: 0 auto; /* Center align the grid */
+    }
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-title {
+        margin-bottom: 10px; 
+        font-weight: bold;
+        text-align: center;
+    }
+    video {
+        width: 100%; 
+        height: auto;
+    }
+    .video-container-four {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 15px; /* Space between videos */
+      max-width: 1500px; /* Adjust to your preferred width */
+      margin: 0 auto; /* Center align the grid */
+    }
+    .video-item-four {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .video-title-four {
+        margin-bottom: 10px; /* Space between title and video */
+        font-weight: bold;
+        text-align: center;
+    }
+    .new-row-container {
+        display: flex; /* Keep text and videos in one row */
+        flex-direction: row; /* Align text next to the videos */
+        align-items: center; /* Vertically align the text and videos */
+        justify-content: center; /* Center the whole row on the page */
+        gap: 20px; /* Space between the text and videos */
+        padding: 10px;
+        margin-left: 4%;
+    }
+
+    .new-videos {
+        display: flex;
+        flex-direction: row; /* Arrange videos horizontally */
+        gap: 15px; /* Space between video items */
+    }
+
+    .new-video-item {
+        display: flex;
+        flex-direction: column; /* Stack title above the video */
+        align-items: center; /* Center-align titles and videos */
+    }
+
+    .new-video-title {
+        font-size: 16px;
+        margin-bottom: 5px; /* Space between title and video */
+    }
+
+    .new-videos video {
+        width: 200px; /* Set video size */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Crop and center the video */
+        font-size: small;
+    }
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion">
+  <meta property="og:title" content="TalkieGen"/>
+  <meta property="og:description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion"/>
+  <meta property="og:url" content="https://talkiegen.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <!-- <meta name="twitter:title" content="TalkieGen">
+  <meta name="twitter:description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion">
+  Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image"> --> 
+
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Diffusion Models, video-to-video, generative AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="./supp/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+    var sources = document.querySelectorAll('source');
+
+    if ("IntersectionObserver" in window) {
+      var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(video) {
+          if (video.isIntersecting) {
+            for (var source in video.target.children) {
+              var videoSource = video.target.children[source];
+              if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                videoSource.src = videoSource.dataset.src;
+              }
+            }
+
+            video.target.load();
+            video.target.classList.remove("lazy");
+            lazyVideoObserver.unobserve(video.target);
+          }
+        });
+      });
+
+      lazyVideos.forEach(function(lazyVideo) {
+        lazyVideoObserver.observe(lazyVideo);
+      });
+    }
+  });
+  </script>
+</head>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Table with Arrow Buttons</title>
+  <style>
+    .page-container {
+      width: 1200px;
+      min-height: 1000px;
+      margin: 0 auto;
+      text-align: left;
+      padding-top: 5em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em;
+      height: auto;
+    }
+
+    .scrollable-table-container {
+      display: flex;
+      align-items: center;
+    }
+
+    #scrollableTableWrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: auto;
+      display: table;
+      border-collapse: separate;
+      box-sizing: border-box;
+      text-indent: initial;
+      line-height: normal;
+      font-weight: normal;
+      font-size: medium;
+      font-style: normal;
+      color: -internal-quirk-inherit;
+      text-align: start;
+      border-spacing: 2px;
+      border-color: gray;
+      white-space: normal;
+      font-variant: normal;
+    }
+
+    .last-updated {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 10px;
+      color: black;
+      /* text color */
+      font-size: 1.0em;
+      z-index: 1000;
+      /* ensures it's on top of other elements */
+    }
+
+    .container-1 {
+      height:750px;
+    }
+
+    .container-2{
+      height:550px;
+
+    }
+
+    .video-container-character {
+      position: relative;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+      padding: 0;
+    }
+
+    .video-container-stylizaton {
+      position: relative;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+      padding: 0;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      content: '';
+    }
+
+    .video-container-character .swiper-button-next,
+    .video-container-character .swiper-button-prev {
+      top: 23rem;
+      outline: none;
+    }
+
+    .video-container-stylizaton .swiper-button-next,
+    .video-container-stylizaton .swiper-button-prev {
+      top: 15rem;
+      outline: none;
+    }
+
+    .swiper-icon {
+      font-size: 4rem;
+      color: black;
+    }
+    .video-size {
+    height: 335px;
+    }
+    .video-size-2 {
+    height: 250px;
+    }
+
+    .responsive-img {
+    width: 80vw;  /* Always 80% of viewport width */
+    max-width: 1400px;  /* Prevents it from exceeding original size */
+    height: auto;  /* Maintains aspect ratio */
+    display: block;
+    margin: 0 auto;  /* Center horizontally */
+}
+
+.full-width-container {
+    width: 100vw;  /* Ensure it covers the full viewport width */
+    margin-left: calc(-50vw + 50%);  /* Shift left to align with viewport */
+    text-align: center;
+}
+
+
+
+    .video-container-four {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: calc(0.5%); /* Space between videos */
+            max-width: 1100px; /* Adjust to your preferred width */
+            margin: 0 auto; /* Center align the grid */
+        }
+        .video-item-four {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video-title-four {
+            margin-bottom: 0px; /* Space between title and video */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .video-container-five {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columns */
+            gap: calc(0.5%); /* Space between videos */
+            max-width: 1400px; /* Adjust to your preferred width */
+            margin: 0 auto; /* Center align the grid */
+        }
+
+        /* carouseal with 3 items and 3 rows */
+
+        .results-carousel-3x3 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px;
+        padding: 0;
+        margin: 0 auto;
+        justify-content: center;
+        width: 90vw; /* 80% of viewport width */
+        max-width: 1400px;
+        background-color: var(--main-bg-color);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .carousel-item-3x3 {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: var(--main-bg-color) !important;
+    }
+
+    .carousel-row-3x3 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 17px;
+        gap: 0px;
+        width: 100%;
+    }
+
+    .video-item-3x3 {
+        width: calc(33%); /* Maintain exactly one-third width minus gap */
+        box-sizing: border-box;
+    }
+
+    .video-item-2x2 {
+        width: calc(49%); /* Maintain exactly one-third width minus gap */
+        /* box-sizing: border-box; */
+    }
+
+    .video-item-3x3 video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: none;
+        outline: none;
+    }
+
+    .video-title-3x3 {
+        text-align: center;
+        margin-top: 0px;
+        font-family: "Times New Roman", serif;
+        font-weight: normal !important;
+        /* Reduced font size range for better scaling */
+        font-size: clamp(8px, 1.5vw, 20px); /* Smaller minimum size, reduced scaling rate */
+        
+        /* Keep truncation attempt */
+        /* display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        max-height: 2.4em;
+        line-height: 1.2; */
+    }
+
+    .teaser-container {
+    position: relative;
+    width: 40vw; /* 80% of viewport width */
+    margin: 0 auto; /* Center the container */
+    max-width: 1400px; /* Maximum width on large screens */
+    background-color: #000; /* Black background for letterboxing */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.teaser-video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra space below video */
+    object-fit: contain; /* Ensure video fits without stretching */
+}
+
+/* Optional overlay for controls or text */
+.teaser-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.teaser-container:hover .teaser-overlay {
+    opacity: 1;
+}
+
+.audio-toggle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.audio-toggle:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.audio-toggle span {
+    color: white;
+    font-size: 20px;
+}
+
+.text-container {
+    width: 70vw !important; /* 70% of viewport width */
+    margin: 0 auto !important; /* Center the container */
+    max-width: 1200px !important; /* Optional: maximum width on very large screens */
+    box-sizing: border-box !important; /* Makes sure padding is included in width calculation */
+    text-align: left !important;
+}
+
+/* Optional: adjust width and padding for smaller screens */
+@media screen and (max-width: 768px) {
+    .text-container {
+        width: 85vw !important; /* Slightly wider on mobile for better readability */
+        padding: 15px !important;
+        text-align: left !important;
+    }
+}
+
+/* Adjust video size for different screen sizes */
+@media screen and (max-width: 768px) {
+    .teaser-container {
+        width: 90vw; /* Slightly wider on mobile for better visibility */
+    }
+}
+
+    @media screen and (max-width: 480px) {
+        .video-title-3x3 {
+            font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
+            margin-top: 0px;
+            margin: 0px;
+            /* -webkit-line-clamp: 2;
+            line-clamp: 2;
+            max-height: 1.2em; */
+        }
+
+        .results-carousel-3x3 {
+            width: 90vw;
+            gap: 0px;
+        }
+        
+        .carousel-item-3x3,
+        .carousel-row-3x3 {
+            gap: 0px;
+        }
+        
+        .video-item-3x3 {
+            width: calc(33%); /* Adjust for smaller gap */
+        }
+    }
+
+            /* qulitative comparison css */
+
+            /* Container that holds the row of videos */
+            .new-row-container {
+            display: flex;
+            justify-content: space-between; /* Evenly space out the videos */
+            gap: 10px; /* Space between the videos */
+            flex-wrap: nowrap; /* Prevent wrapping of items */
+            padding: 0px 0;
+            width: 100%;
+            max-width: 100%; /* Ensure the container takes up the full width */
+            margin: 0 auto; /* Center the container */
+            overflow: hidden; /* Ensure any excess content is clipped */
+            }
+
+
+
+            /* Title above the video */
+            .new-text-prompt {
+            font-size: 20px; /* Size of the title text */
+            color: #333; /* Dark color for the text */
+            }
+
+            /* Title above the video */
+            .new-text-prompt-bold {
+            font-size: 20px; /* Size of the title text */
+            font-weight: bold;
+            color: #02376c; /* Dark color for the text */
+            }
+
+            /* Make the video fill the width of its container */
+            .new-video-item video {
+            width: 100%; /* Make the video take the full width of the item */
+            display: block;
+            border: none; /* No border around the video */
+            outline: none; /* Remove focus outline */
+            height: auto; /* Maintain video aspect ratio */
+            }
+
+            /* Optional: style for the prompt below the video */
+            /* .new-video-item .new-text-prompt:last-child {
+            font-size: 20px;
+            font-weight: normal;
+            color: #666; /* Lighter color for the prompt } */
+
+            /* Responsive design: Stack the videos vertically on smaller screens */
+            @media (max-width: 768px) {
+            .new-video-item {
+                flex: 1 1 100%; /* Stack videos on smaller screens */
+                width: 100%; /* Full width on smaller devices */
+            }
+
+            .new-video-item:hover {
+                transform: none; /* Remove scale effect on hover */
+            }
+
+                    /* Title above the video */
+        .new-text-prompt {
+            font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
+            color: #333; /* Dark color for the text */
+            }
+
+            .new-text-prompt-bold {
+            font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
+            font-weight: bold;
+            color: #02376c; /* Dark color for the text */
+            }
+            }
+
+  </style>
+</head>
+
+
+
+<body>
+
+    
+
+ <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <br> 
+            <h1 class="title is-1 publication-title">TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion</h1>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>* 1,2</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://bsun0802.github.io/" target="_blank">Bo Sun</a><sup>1</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://howiema.github.io/" target="_blank">Haoyu Ma</a><sup>1</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://sekunde.github.io/" target="_blank">Ji Hou</a><sup>1</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://xujuefei.com/" target="_blank">Felix Juefei-Xu</a><sup>1</sup><span>&numsp;</span></span>
+                <br>
+                <span class="author-block"><a href="https://zechenghe.github.io/" target="_blank">Zecheng He</a><sup>1</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://sites.google.com/view/xiaoliangdai/" target="_blank">Xiaoliang Dai</a><sup>1</sup><span>&numsp;</span></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=u-UDZcsAAAAJ&hl=en" target="_blank">Tingbo Hou</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=GlSWNHsAAAAJ&hl=en" target="_blank">Animesh Sinha</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://www.linkedin.com/in/p%C3%A9ter-vajda-9a03aaa/" target="_blank">Peter Vajda</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://wenhuchen.github.io/" target="_blank">Wenhu Chen</a><sup>2</sup></span>
+              </div>
+    
+              <div class="is-size-7 publication-authors">
+                <span class="author-block"><sup>1</sup>GenAI, Meta</span><span>&numsp;</span>
+                <span class="author-block"><sup>2</sup>University of Waterloo</Wbr></span><span>&numsp;</span>
+                <br>
+                <span class="author-block"><sup>*</sup></span>Work done during the first author’s internship at GenAI, Meta<span>&numsp;</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- Paper PDF link -->
+                  <span class="link-block">
+                    <a href="???" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- Arxiv link -->
+                <span class="link-block">
+                <a href="???"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="teaser-container">
+        <video autoplay loop muted playsinline class="lazy">
+            <source data-src="teaser.mp4" type="video/mp4">
+        </video>
+        <button class="audio-toggle">
+            <span class="audio-off">🔇</span>
+            <span class="audio-on" style="display: none">🔊</span>
+        </button>
+    </div> -->
+</section>
+
+
+<!-- Paper abstract -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Abstract
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+<section class="section hero is-small">
+<div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results by TalkieGen</h2>
+        <div class="content has-text-justified">
+          <p>
+            TalkieGen generates video frames solely from input <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
+            <br>
+            <strong>Unmute the video to hear the audio.</strong> 
+            <strong>Use the arrows to navigate through the results.</strong>
+          </p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table width="100%" align="center">
+    <tbody>
+        <div id="results-carousel" class="carousel results-carousel-3x3">
+        
+        <!-- Carousel Item 1 (3 rows of 3 videos) -->
+        <div class="carousel-item carousel-item-3x3">
+            <!-- Row 1: 3 videos -->
+            <div class="carousel-row-3x3">
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/man_talk.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/man_talk_2.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/man_talk_3.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+            </div>
+
+            <!-- Row 2: 3 videos -->
+            <div class="carousel-row-3x3">
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/woman_talk.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/woman_talk_2.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="lazy">
+                        <source data-src="assets/1p/woman_talk_3.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Carousel Item 2 (3 rows of 3 videos) -->
+        <!-- <div class="carousel-item carousel-item-3x3"> -->
+            
+            <!-- Row 1: 3 videos -->
+            <!-- <div class="carousel-row-3x3">
+                <div class="video-item video-item-3x3">
+                    <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/A_calligrapher_s_brush_moves_gracefully_across_paper,_leaving_flowing_black_ink_trails..mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">A calligrapher's brush moves gracefully across paper.</div>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/A_woman_doing_a_pirouette_in_an_empty_dance_studio._The_video_captures_the_grace_and_beauty_of_the_young_woman_as_she_practices_ballet,_showcasing_her_flexibility_and_control4.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">A woman doing a pirouette in an empty dance studio.</div>            
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/A_slow-motion_close-up_of_a_chef_slicing_a_tomato_into_even_slices_on_a_wooden_cutting_board..mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">A slow-motion close-up of a chef slicing a tomato.</div>
+                </div>
+            </div> -->
+
+            <!-- Row 2: 3 videos -->
+            <!-- <div class="carousel-row-3x3">
+                <div class="video-item video-item-3x3">
+                    <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/A_goat_balancing_on_a_spinning_ball_on_a_mountaintop,_its_steady_gaze_unflinching..mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">A goat balancing on a spinning ball on a mountaintop.</div>
+                </div>
+                <div class="video-item video-item-3x3">
+                     <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/A_panda_breakdancing_in_a_neon-lit_urban_alley,_graffiti_art_providing_a_colorful_backdrop.2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">A panda breakdancing in a neon-lit urban alley.</div></div>
+                <div class="video-item video-item-3x3">
+                    <video autoplay loop muted playsinline class="lazy">
+                        <source data-src="assets/our_results_labeled/Water_poured_into_a_glass.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-title-3x3">Water poured into a glass.</div>
+                </div>
+            </div> -->
+        <!-- </div> -->
+    </div>
+</tbody>
+</table>
+<br/>
+<br/>
+</section>
+
+<!-- End section-->
+<!-- <section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Qualitative Comparison: VideoJAM vs. the Base Model (DiT-30B)</h2>
+            <div class="content has-text-justified">
+              <p>
+                We provide an apples-to-apples qualitative comparison between <strong>VideoJAM and the base model it was fine-tuned from, DiT-30B.</strong>
+                <br>
+                <strong>Use the arrows to navigate through the results.</strong>
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table width="100%" align="center">
+        <tbody>
+            <div id="results-carousel" class="carousel results-carousel-3x3">
+                    Carousel Item 1 (4 videos)
+                    <div class="carousel-item carousel-item-3x3">
+                        <div class="carousel-row-3x3">
+                        <div class="video-item video-item-2x2">
+                                <video autoplay loop muted playsinline class="lazy">
+                                    <source data-src="assets/concat_labeled/A_ballet_dancer_twirls_gracefully_in_a_meadow_at_sunrise,_their_movements_soft_and_flowing_like_the_morning_breeze..mp4" type="video/mp4">
+                                </video>
+                                <div class="video-title-3x3">A ballet dancer twirls gracefully in a meadow at sunrise, their movements soft and flowing like the morning breeze.</div>
+                            </div>
+                        <div class="video-item video-item-2x2">
+                                <video autoplay loop muted playsinline class="lazy">
+                                    <source data-src="assets/concat_labeled/A_dog_jumping_over_a_wooden_hurdle._Slow_motion..mp4" type="video/mp4">
+                                </video>
+                                <div class="video-title-3x3">A dog jumping over a wooden hurdle. Slow motion.</div>
+                            </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                        <div class="video-item video-item-2x2">
+                                <video autoplay loop muted playsinline class="lazy">
+                                    <source data-src="assets/concat_labeled/An_acrobat_executing_a_one-arm_handstand_on_a_narrow_beam_above_water.2.mp4" type="video/mp4">
+                                </video>
+                                <div class="video-title-3x3">An acrobat executing a handstand on a narrow beam above water.</div>
+                            </div>
+                        <div class="video-item video-item-2x2">
+                                <video autoplay loop muted playsinline class="lazy">
+                                    <source data-src="assets/concat_labeled/Close-up_of_a_sushi_chef_slicing_sashimi_with_deliberate,_smooth_movements..mp4" type="video/mp4">
+                                </video>
+                                <div class="video-title-3x3">Close-up of a sushi chef slicing sashimi with deliberate, smooth movements.</div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    Carousel Item 2 (4 videos)
+                    <div class="carousel-item carousel-item-3x3">
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_basketball_spins_as_it_arcs_through_the_air_in_an_empty_gym,_bouncing_off_the_backboard_and_falling_into_the_hoop..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A basketball spins as it arcs through the air in an empty gym, bouncing off the backboard and falling into the hoop.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_monkey_performs_a_360_spin_on_a_skateboard_at_the_skate_park,_landing_smoothly..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A monkey performs a 360 spin on a skateboard at the skate park, landing smoothly.</div>
+                        </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_dolphin_and_a_seal_playing_volleyball_with_a_beach_ball,_using_their_noses_to_pass_it_back_and_forth.2.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A dolphin and a seal playing volleyball with a beach ball.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_gymnast_performs_a_smooth_aerial_somersault_on_a_grassy_hill_at_sunrise..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A gymnast performs a smooth aerial somersault on a grassy hill at sunrise.</div>
+                            </div>
+                    </div>
+                </div>
+                    
+                    Carousel Item 3 (4 videos)
+                    <div class="carousel-item carousel-item-3x3">
+                    <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/Side_view_of_a_woman_twirls_a_hula_hoop_around_her_waist_in_a_park_during_sunset..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">Side view of a woman twirls a hula hoop around her waist in a park during sunset.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/An_otter_riding_rollerblades_on_two_legs_in_a_bustling_city_park,_twirling_past_picnicking_families..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">An otter riding rollerblades on two legs in a bustling city park, twirling past picnicking families.</div>
+                        </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/At_the_edge_of_a_roaring_waterfall,_a_boxer_practices_jabs_and_hooks_on_a_punching_bag,_sweat_dripping_as_he_refines_his_technique.2.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">At the edge of a roaring waterfall, a boxer practices jabs and hooks on a punching bag, sweat dripping as he refines his technique.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_close-up_of_a_runner_s_legs_as_they_dash_through_a_rainstorm,_their_shoes_splashing_through_puddles_as_they_push_forward_with_determination.4.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A close-up of a runner's legs as they dash through a rainstorm, their shoes splashing through puddles as they push forward with determination.</div>
+                        </div>
+                    </div>
+                    </div>
+
+                    Carousel Item 4 (4 videos)
+                    <div class="carousel-item carousel-item-3x3">
+                    <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_woman_doing_push-up_exercise..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A woman doing push-up exercise.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_giraffe_stepping_gingerly_along_a_tightrope_above_a_city_plaza,_drawing_gasps_from_the_crowd_below..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A giraffe stepping gingerly along a tightrope above a city plaza, drawing gasps from the crowd below.</div>
+                        </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_person_leaps_and_spins_joyfully_on_the_crystal-clear_surface_of_the_lake,_their_reflection_rippling_gently_with_every_movement_as_dawn_breaks_on_the_horizon..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A person leaps and spins joyfully on the crystal-clear surface of the lake, their reflection rippling gently with every movement as dawn breaks on the horizon.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_bear_wobbling_slightly_as_it_rides_a_bicycle_down_a_forest_trail,_its_paws_gripping_the_seat_for_balance.5.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A bear wobbling slightly as it rides a bicycle down a forest trail, its paws gripping the seat for balance.</div>
+                        </div>
+                    </div>
+                </div>
+
+                    Carousel Item 5 (4 videos)
+                    <div class="carousel-item carousel-item-3x3">
+                    <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_horse_gallops_across_a_field,_its_mane_flowing_in_the_wind_as_it_leaps_over_a_wooden_fence..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A horse gallops across a field, its mane flowing in the wind as it leaps over a wooden fence.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_gymnast_doing_a_handstand_on_a_sandy_beach_at_sunset..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A gymnast doing a handstand on a sandy beach at sunset.</div>
+                        </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_man_enjoying_a_leisurely_bike_ride_along_a_road_next_to_a_body_of_water_during_a_sunset..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A man enjoying a leisurely bike ride along a road next to a body of water during a sunset.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_penguin_slides_down_a_snowy_hill_on_its_belly,_cheering_with_tiny_flippers_in_the_air..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A penguin slides down a snowy hill on its belly, cheering with tiny flippers in the air.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousel-item-3x3">
+                    Carousel Item 6 (4 videos)
+                    <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_dancer_leaps_across_a_stage_at_sunset,_golden_confetti_fluttering_around_them.2.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A dancer leaps across a stage at sunset, with golden confetti fluttering around them.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_snowboarder_navigates_a_snow-covered_mountain_trail,_dodging_tall_pine_trees._They_leap_off_a_small_hill,_executing_a_mid-air_spin_before_landing_gracefully_and_continuing_their_descent.3.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A snowboarder navigates a snow-covered mountain trail, dodging tall pine trees. They leap off a small hill, executing a mid-air spin before landing gracefully and continuing their descent.</div>            
+                        </div>
+                        </div>
+                        <div class="carousel-row-3x3">
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_man_holding_a_headstand_on_a_yoga_mat_in_a_quiet_studio..mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A man holding a headstand on a yoga mat in a quiet studio.</div>
+                        </div>
+                       <div class="video-item video-item-2x2">
+                            <video autoplay loop muted playsinline class="lazy">
+                                <source data-src="assets/concat_labeled/A_weightlifter_performs_a_deadlift_with_perfect_form_in_a_concrete_garage_gym.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-title-3x3">A weightlifter performs a deadlift with perfect form in a concrete garage gym.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </tbody>
+    </table>
+</section> -->
+
+<!-- <section class="section hero is-small">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">How does it work?</h2>
+            <div class="content has-text-justified">
+              <p>
+                We present <strong>VideoJAM</strong>, a framework that explicitly instills a strong motion
+                prior to any video generation model.  </p>
+                VideoJAM is constructed of two units; (a) <strong>Training.</strong>  Given an input video <em>x<sub>1</sub></em> and its motion
+representation <em>d<sub>1</sub></em>, both signals are noised and embedded to a single, joint latent representation using a linear layer, <em>W<sub>in</sub><sup>+</sup></em>. The diffusion
+model processes the input, and two linear projection layers predict both appearance and motion from the joint representation (<em>W<sub>out</sub><sup>+</sup></em>).
+<br/>
+(b) <strong>Inference.</strong>
+We propose <strong>Inner-Guidance,</strong> where the model’s own noisy motion prediction is used to guide the video prediction at each step.
+            </p>
+              <br/>
+            </div>
+          </div>
+        </div>
+        <div class="full-width-container">
+            <img src="assets/method_figure.jpg" class="responsive-img"/>
+          </div>
+    </div>
+</section> -->
+<!-- End section-->
+
+
+<section class="section hero is-light">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Qualitative Comparison: TalkieGen-bench</h2>
+            <div class="content has-text-justified">
+              <p>
+                We enclose qualitative comparisons to the leading baselines (SadTalker, Aniportrait, Hallo3) on representative prompts from our TalkieGen benchmark.
+              </p>
+              <br/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<table width="100%" align="center">
+    <tbody>
+        <div class="carousel-row-3x3">
+            <div class="video-item video-item-3x3">
+                <div class="new-text-prompt">TalkieGen</div>
+                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
+                    <source data-src="assets/comparison_with_baseline/man_talk.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item video-item-3x3">
+                <div class="new-text-prompt">Hallo3</div>
+                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
+                    <source data-src="assets/comparison_with_baseline/Hallo3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item video-item-3x3">
+                <div class="new-text-prompt">Aniportrait</div>
+                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
+                    <source data-src="assets/comparison_with_baseline/aniportrait_crop.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item video-item-3x3">
+                <div class="new-text-prompt">SadTalker</div>
+                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
+                    <source data-src="assets/comparison_with_baseline/aniportrait_resize.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </tbody>
+</table>
+<td align="center" style="width: 100%; padding: 0;">
+    <span class="video-title-3x3" style="font-size: 15px;">
+        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
+    </span>
+</td>
+<!-- </section> -->
+
+<!--BibTex citation -->
+<!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>If you find this project useful for your research, please cite the following:</p>
+
+      <pre><code>@misc{2502.02492,
+        Author = {Hila Chefer and Uriel Singer and Amit Zohar and Yuval Kirstain and Adam Polyak and Yaniv Taigman and Lior Wolf and Shelly Sheynin},
+        Title = {VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models},
+        Year = {2025},
+        Eprint = {arXiv:2502.02492},
+        }</code></pre>
+    </div>
+  </section> -->
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p style="font-size: small; text-align: left;">
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+    bulmaCarousel.attach('#results-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1
+    });
+    </script>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+  </body>
+  </html>
