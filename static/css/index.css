@@ -126,12 +126,18 @@ body {
 }
 
 .slider-pagination .slider-page {
-  background: #000000;
+  background: white;
 }
 
 .eql-cntrb { 
   font-size: smaller;
 }
 
+polyline {
+  fill: black;
+  stroke-width: 0.5em;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 
