@@ -339,9 +339,9 @@
         flex-wrap: wrap;
         gap: 0px;
         padding: 0;
-        margin: 0 auto;
+        margin: 0 0;
         justify-content: center;
-        width: 90vw; /* 80% of viewport width */
+        width: 97vw; /* MODIFY THIS for 80% of viewport width */
         max-width: 100vw;  /* modify this!*/
         background-color: var(--main-bg-color);
         box-sizing: border-box;
@@ -361,13 +361,14 @@
     .carousel-row-3x3 {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 17px;
+        /* margin-bottom: 17px; */
+        margin-bottom: 5px;  /* MODIFY THIS FOR MARGIN*/
         gap: 0px;
         width: 100%;
     }
 
     .video-item-3x3 {
-        width: calc(33%); /* Maintain exactly one-third width minus gap */
+        width: calc(33.2%); /* Maintain exactly one-third width minus gap */
         box-sizing: border-box;
     }
 
@@ -569,15 +570,15 @@
             }
 
                     /* Title above the video */
-        .new-text-prompt {
-            font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
-            color: #333; /* Dark color for the text */
+            .new-text-prompt {
+                font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
+                color: #333; /* Dark color for the text */
             }
 
             .new-text-prompt-bold {
-            font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
-            font-weight: bold;
-            color: #02376c; /* Dark color for the text */
+                font-size: clamp(8px, 1.2vw, 14px); /* Smaller minimum size, reduced scaling rate */
+                font-weight: bold;
+                color: #02376c; /* Dark color for the text */
             }
             }
 
@@ -596,7 +597,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <br> 
-            <h1 class="title is-1 publication-title" style="font-size: 80px;">TalkieGen</h1>
+            <h1 class="title is-1 publication-title" style="font-size: 80px;">Talkie Gen</h1>
             <h5 class="title is-5 publication-title">Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion</h5>
             <div class="is-size-5 publication-authors">
                 <span class="author-block"><a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>* 1,2</sup><span>&numsp;</span></span>
@@ -680,12 +681,14 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
         <div class="column is-full">
+
             <!-- <h2 class="title is-3">Generation Results by TalkieGen</h2> -->
-            <div class="content has-text-justified">
-            <p class="is-size-6">
+            <div class="content">
+            <p class="is-size-6" style="font-family: 'Roboto', sans-serif;">
                 TalkieGen generates video solely from <strong>SPEECH</strong> and <strong>TEXT</strong>, without requiring any auxiliary conditions. 
             </p>
-            <p class="is-size-7">
+            <img src="assets/TalkieGen_framwork_demo.jpg" alt="Description of image" style="max-width: 30%; height: auto;">
+            <p class="is-size-7 has-text-justified">
                 🔊 Unmute to hear the audio.
                 <br>
                 ➡️ Use the arrows to navigate through the results.
@@ -709,7 +712,7 @@
                         <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_1_man_guitar.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
@@ -717,7 +720,7 @@
                         <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_9_woman_sing.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
@@ -725,7 +728,7 @@
                         <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_11_man_jail.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
                     </span>
                 </div>
             </div>
@@ -861,7 +864,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3">Emotion Control</h2>
+            <h2 class="title is-3" style="font-family: 'Roboto', sans-serif;">Emotion Control</h2>
             <div class="content has-text-justified">
               <p>
                 <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
@@ -963,7 +966,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3">Action Control</h2>
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Action Control</h2>
             <div class="content has-text-justified">
               <p>
                 <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
@@ -1079,7 +1082,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3">2 people talks</h2>
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Two People Talk</h2>
             <div class="content has-text-justified">
               <p>
                 <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
