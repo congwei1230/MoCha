@@ -101,9 +101,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion">
+  <meta name="description" content="Talking Characters: Towards Movie-Level Talking Character Video Synthesis">
   <meta property="og:title" content="TalkieGen"/>
-  <meta property="og:description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion"/>
+  <meta property="og:description" content="Talking Characters: Towards Movie-Level Talking Character Video Synthesis"/>
   <meta property="og:url" content="https://talkiegen.github.io/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
@@ -112,7 +112,7 @@
 
 
   <!-- <meta name="twitter:title" content="TalkieGen">
-  <meta name="twitter:description" content="TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion">
+  <meta name="twitter:description" content="Talking Characters: Towards Movie-Level Talking Character Video Synthesis">
   Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image"> --> 
@@ -122,7 +122,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>TalkieGen: Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion</title>
+  <title>Talking Characters: Towards Movie-Level Talking Character Video Synthesis</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -341,7 +341,7 @@
         padding: 0;
         margin: 0 0;
         justify-content: center;
-        width: 97vw; /* MODIFY THIS for 80% of viewport width */
+        width: 99vw; /* MODIFY THIS for 80% of viewport width */
         max-width: 100vw;  /* modify this!*/
         background-color: var(--main-bg-color);
         box-sizing: border-box;
@@ -597,8 +597,8 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <br> 
-            <h1 class="title is-1 publication-title" style="font-size: 80px;">Talkie Gen</h1>
-            <h5 class="title is-5 publication-title">Towards Movie-Level Talking Character Video Synthesis with Joint Speech-and-Text Diffusion</h5>
+            <h1 class="title is-1 publication-title" style="font-size: 80px;">Talking Characters</h1>
+            <h5 class="title is-5 publication-title">Towards Movie-Level Talking Character Video Synthesis</h5>
             <div class="is-size-5 publication-authors">
                 <span class="author-block"><a href="https://congwei1230.github.io/" target="_blank">Cong Wei</a><sup>* 1,2</sup><span>&numsp;</span></span>
                 <span class="author-block"><a href="https://bsun0802.github.io/" target="_blank">Bo Sun</a><sup>† 1</sup><span>&numsp;</span></span>
@@ -680,7 +680,7 @@
 </section> -->
 <!-- End paper abstract -->
 
-<section class="section hero is-small is-black">
+<section class="section hero is-small pl-0 pr-0 is-black">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
         <div class="column is-full">
@@ -688,15 +688,11 @@
             <!-- <h2 class="title is-3">Generation Results by TalkieGen</h2> -->
             <div class="content">
             <p class="is-size-6" style="font-family: 'Roboto', sans-serif;">
-                TalkieGen generates video solely from <strong>SPEECH</strong> and <strong>TEXT</strong>, without requiring any auxiliary conditions. 
+                All talking characters are generated solely from <strong>SPEECH</strong> and <strong>TEXT</strong>. 
+                <br>
+                Click ▶️ to bring them to life.
             </p>
             <img src="assets/TalkieGen_framwork_demo.jpg" alt="Description of image" style="max-width: 30%; height: auto;">
-            <p class="is-size-7 has-text-justified">
-                🔊 Unmute to hear the audio.
-                <br>
-                ➡️ Use the arrows to navigate through the results.
-            </p>
-            <br>
             </div>
         </div>
         </div>
@@ -712,10 +708,10 @@
             <div class="carousel-row-3x3">
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_1_man_guitar.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_closeup_facingcamera/1p_body_boring is easy.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
@@ -723,86 +719,52 @@
                         <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_9_woman_sing.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_11_man_jail.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_closeup_emotioncontrol/1p_woman_cry_apartment_you_have_to_be.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        a man with fair skin and brown hair standing in front of a screen displaying x-rays. 
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
-            </div>
-
-
-            <!-- Row 1: 3 videos -->
-            <div class="carousel-row-3x3">
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_12_woman_doctor.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_13_man_on_hospital_bed.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_14_man_business_suit_cigar.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
             </div>
 
             <!-- Row 2: 3 videos -->
             <div class="carousel-row-3x3">
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/man_talk.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_12_woman_doctor.mp4"  type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/man_talk_2.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_cigar_i_have_said_it_before.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/man_talk_3.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_closeup_facingcamera/close_up_facing_camera_diverse_scene_13_man_on_hospital_bed.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
-                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays.  -->
                     </span>
                 </div>
             </div>
-        </div>
 
-        <!-- Carousel Item 2 (3 rows of 3 videos) -->
-        <div class="carousel-item carousel-item-3x3">
-            
-            <!-- Row 1: 3 videos -->
             <!-- Row 3: 3 videos -->
             <div class="carousel-row-3x3">
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/woman_talk.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_gold_you_told_me.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
                         <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -810,7 +772,7 @@
                 </div>
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/woman_talk_2.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_woman_drink_tea_i_am_so_tired.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
                         <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -818,7 +780,7 @@
                 </div>
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/woman_talk_3.mp4" type="video/mp4">
+                        <source data-src="assets/1p/1p_closeup_facingcamera/1p_boy_3d_is life always this hard.mp4 " type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
                         <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -826,33 +788,35 @@
                 </div>
             </div>
 
-                        <!-- Row 3: 3 videos -->
-                        <div class="carousel-row-3x3">
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/000035_0003.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/000033_0001.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
-                            <div class="video-item video-item-3x3">
-                                <video controls playsinline class="plyr-video lazy">
-                                    <source data-src="assets/1p/1p_closeup_facingcamera/000032_0000.mp4" type="video/mp4">
-                                </video>
-                                <span class="video-title-3x3" style="font-size: 10px;">
-                                    <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                                </span>
-                            </div>
-                        </div>
+            <!-- Row 4: 4 videos -->
+            <div class="carousel-row-3x3">
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="plyr-video lazy">
+                        <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_woman_underwater_its_true_that.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="plyr-video lazy">
+                        <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_woman_street_talk_waving.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                    </span>
+                </div>
+                <div class="video-item video-item-3x3">
+                    <video controls playsinline class="plyr-video lazy">
+                        <source data-src="assets/1p/1p_closeup_emotioncontrol/1p_woman_plane_sad_talking.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-title-3x3" style="font-size: 10px;">
+                        <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                    </span>
+                </div>
+            </div>
+
+        </div>
         </div>
     </div>
 </tbody>
@@ -862,18 +826,14 @@
 </section>
 
 
-<!-- EMOTION CONTROL GROUP -->
-<section class="section hero is-black">
+<!-- 1P emotion control -->
+<section class="section hero is-small is-black">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3" style="font-family: 'Roboto', sans-serif;">Emotion Control</h2>
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Emotion Control</h2>
             <div class="content has-text-justified">
               <p>
-                <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
-                <br> -->
-                <!-- <strong>Unmute the video to hear the audio.</strong> 
-                <strong>Use the arrows to navigate through the results.</strong> -->
               </p>
               <br>
             </div>
@@ -887,75 +847,36 @@
             
             <!-- Carousel Item 1 (3 rows of 3 videos) -->
             <div class="carousel-item carousel-item-3x3">
-                <!-- Row 1: 3 videos -->
+               
+                <!-- Row 5: 4 videos -->
                 <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
                             <source data-src="assets/1p/1p_closeup_emotioncontrol/angry.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
                         </span>
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/cry_rain.mp4" type="video/mp4">
+                            <source data-src="assets/1p/1p_closeup_emotioncontrol/2.mp4" type="video/mp4"> 
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body." -->
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
                         </span>
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/cry_snow.mp4" type="video/mp4">
+                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_football_i_just_need.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting blanketed in fresh snow, with delicate snowflakes falling around her. Her tousled dark brown hair is dusted with snow, and her breath is visible in the cold air. The soft, diffused light from the overcast sky casts a pale glow, accentuating the tears on her cheeks. She is wearing a casual beige jacket, speckled with snowflakes. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Fresh tears well up in her eyes, mingling with the snowflakes melting on her skin. The camera remains static throughout the video, capturing her expressive face and upper body." -->
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
                         </span>
                     </div>
                 </div>
 
-                <!-- Row 1: 3 videos -->
-                <div class="carousel-row-3x3">
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/1.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/2.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/3.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting blanketed in fresh snow, with delicate snowflakes falling around her. Her tousled dark brown hair is dusted with snow, and her breath is visible in the cold air. The soft, diffused light from the overcast sky casts a pale glow, accentuating the tears on her cheeks. She is wearing a casual beige jacket, speckled with snowflakes. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Fresh tears well up in her eyes, mingling with the snowflakes melting on her skin. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Row 3: 3 videos -->
-                <div class="carousel-row-3x3">
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/4.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                </div>
             </div>
-    
         </div>
     </tbody>
     </table>
@@ -964,7 +885,7 @@
 </section>
 
 
-<!-- MEDIUM SHOT ACTION CONTROL GROUP -->
+<!-- 1P Action control -->
 <section class="section hero is-small is-black">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -972,10 +893,119 @@
             <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Action Control</h2>
             <div class="content has-text-justified">
               <p>
-                <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
-                <br> -->
-                <!-- <strong>Unmute the video to hear the audio.</strong> 
-                <strong>Use the arrows to navigate through the results.</strong> -->
+              </p>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <table width="100%" align="center">
+        <tbody>
+            <div id="results-carousel" class="carousel results-carousel-3x3">
+            
+            <!-- Carousel Item 1 (3 rows of 3 videos) -->
+            <div class="carousel-item carousel-item-3x3">
+               
+                <!-- Row 5: 4 videos -->
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_woman_tennis_exercise_.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 10px;">
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_moon_there_is_no_2.mp4" type="video/mp4"> 
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 10px;">
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_woman_grass_sometimes its the very people.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 10px;">
+                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        </span>
+                    </div>
+                </div>
+
+                                <!-- Row 5: 4 videos -->
+                                <div class="carousel-row-3x3">
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_butcher_this_part_of_my.mp4" type="video/mp4"> 
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_holding_coffee_are_you_behind.mp4" type="video/mp4">
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_elephant_friday_last_night.mp4" type="video/mp4">
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="carousel-row-3x3">
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_board_i_just_need_one_thing.mp4" type="video/mp4">
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_house_fire_what_ever.mp4" type="video/mp4">
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                    <div class="video-item video-item-3x3">
+                                        <video controls playsinline class="plyr-video lazy">
+                                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_kitchen_to_be_or.mp4" type="video/mp4"> 
+                                        </video>
+                                        <span class="video-title-3x3" style="font-size: 10px;">
+                                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                                        </span>
+                                    </div>
+                                </div>
+            </div>
+        </div>
+    </tbody>
+    </table>
+    <br/>
+    <br/>
+</section>
+
+
+<!-- 2P GROUP -->
+<section class="section hero is-small is-black">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Two-Characters</h2>
+            <div class="content has-text-justified">
+              <p>
               </p>
               <br>
             </div>
@@ -993,7 +1023,7 @@
                 <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/0.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_1talk_man_leather.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
@@ -1001,7 +1031,7 @@
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_1talk_woman_dessert.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body." -->
@@ -1009,7 +1039,7 @@
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/2.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_1talk_woman_laptop.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting blanketed in fresh snow, with delicate snowflakes falling around her. Her tousled dark brown hair is dusted with snow, and her breath is visible in the cold air. The soft, diffused light from the overcast sky casts a pale glow, accentuating the tears on her cheeks. She is wearing a casual beige jacket, speckled with snowflakes. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Fresh tears well up in her eyes, mingling with the snowflakes melting on her skin. The camera remains static throughout the video, capturing her expressive face and upper body." -->
@@ -1021,7 +1051,7 @@
                 <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/3.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_man_adujst_glass.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -1029,7 +1059,7 @@
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/4.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_1talk_woman_pointing.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -1037,7 +1067,7 @@
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/5.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_1clip_1talk/2p_man_keep_your_friends.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -1045,33 +1075,6 @@
                     </div>
                 </div>
 
-                <!-- Row 3: 3 videos -->
-                <div class="carousel-row-3x3">
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/6.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/7.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/5.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                </div>
             </div>
         </div>
     </tbody>
@@ -1085,7 +1088,7 @@
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-full">
-            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Two People Talk</h2>
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Two-Character Alternating Clips</h2>
             <div class="content has-text-justified">
               <p>
                 <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
@@ -1109,7 +1112,7 @@
                 <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/0.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_2clip_2talk/2p_woman_man_flowers_you_dont_even.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
@@ -1117,104 +1120,15 @@
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/1.mp4" type="video/mp4">
+                            <source data-src="assets/2p/2p_2clip_2talk/2p_man_woman_spaceship_why_did_you_do_that.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body." -->
                         </span>
                     </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/2.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting blanketed in fresh snow, with delicate snowflakes falling around her. Her tousled dark brown hair is dusted with snow, and her breath is visible in the cold air. The soft, diffused light from the overcast sky casts a pale glow, accentuating the tears on her cheeks. She is wearing a casual beige jacket, speckled with snowflakes. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Fresh tears well up in her eyes, mingling with the snowflakes melting on her skin. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Row 2: 3 videos -->
-                <div class="carousel-row-3x3">
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/3.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/4.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/5.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </tbody>
-    </table>
-    <br/>
-    <br/>
-</section>
-
-<!-- 2P GROUP -->
-<section class="section hero is-small is-black">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full">
-            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Two People Talk Multi CLIP</h2>
-            <div class="content has-text-justified">
-              <p>
-                <!-- TalkieGen generates video solely from <strong>audio</strong> and <strong>text</strong>, without requiring any auxiliary conditions. 
-                <br> -->
-                <!-- <strong>Unmute the video to hear the audio.</strong> 
-                <strong>Use the arrows to navigate through the results.</strong> -->
-              </p>
-              <br>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <table width="100%" align="center">
-        <tbody>
-            <div id="results-carousel" class="carousel results-carousel-3x3">
-            
-            <!-- Carousel Item 1 (3 rows of 3 videos) -->
-            <div class="carousel-item carousel-item-3x3">
-                <!-- Row 1: 3 videos -->
-                <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
                             <source data-src="assets/2p/2p_2clip_2talk/1.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/2p_2clip_2talk/2.mp4" type="video/mp4">
-                        </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body." -->
-                        </span>
-                    </div>
-                    <div class="video-item video-item-3x3">
-                        <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/2p/2p_2clip_2talk/3.mp4" type="video/mp4">
                         </video>
                         <span class="video-title-3x3" style="font-size: 10px;">
                             <!-- "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting blanketed in fresh snow, with delicate snowflakes falling around her. Her tousled dark brown hair is dusted with snow, and her breath is visible in the cold air. The soft, diffused light from the overcast sky casts a pale glow, accentuating the tears on her cheeks. She is wearing a casual beige jacket, speckled with snowflakes. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Fresh tears well up in her eyes, mingling with the snowflakes melting on her skin. The camera remains static throughout the video, capturing her expressive face and upper body." -->
