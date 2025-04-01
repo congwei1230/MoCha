@@ -1809,8 +1809,17 @@ We propose <strong>Inner-Guidance,</strong> where the model’s own noisy motion
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
     <script>
         const players = Plyr.setup('.plyr-video', {
-            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
+            controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen', 'download']
         });
-      </script>
+
+        players.forEach(player => {
+            const source = player.media.querySelector('source');
+            if (source) {
+                // Set download URL as same as video src
+                const src = source.getAttribute('data-src') || source.getAttribute('src');
+                player.config.urls = { download: src };
+            }
+        });
+    </script>
   </body>
   </html>
