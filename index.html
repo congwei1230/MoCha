@@ -731,7 +731,7 @@
             <div style="background-color: black; padding: 40px; color: white; font-family: 'Roboto', sans-serif; text-align: left;">
                 <p style="font-size: 1.5rem; font-weight: bold;">MoCha is a model for Dialogue-driven Movie Shot Generation.</p>
                 <p>
-                  All talking characters are generated solely from <strong>Speech</strong> and <strong>Text</strong>. 
+                  All talking characters are generated solely from <strong><span style="color:#f5f8f7; text-decoration: underline;">Speech + Text</span></strong>.  
                   <br>
                   Click ▶️ to bring them to life. 
                   <br>
@@ -739,6 +739,7 @@
                   <br>
                   We released a benchmark 🤗<a href="https://huggingface.co/datasets/CongWei1230/MoChaBench" style="color: rgba(136, 96, 47, 0.763);">MoChaBench☕</a> tailored for Dialogue-driven Movie Shot Generation.
                   <br>
+                  When combined with a TTS model, MoCha can also achieve <strong><a href="#text2video" style="color:#028f7a; text-decoration: underline;">Text → Speech + Video</a></strong> generation, similar to the Veo 3 setting.
                   <span style="color: rgb(145, 23, 23);">
                   All videos presented in this project are solely for research demonstration purposes and have no commercial use.
                   </span>
@@ -961,7 +962,7 @@
             <div class="carousel-row-3x3">
                 <div class="video-item video-item-3x3">
                     <video controls playsinline class="plyr-video lazy">
-                        <source data-src="assets/1p/1p_closeup_facingcamera/1p_man_cowbody_i_have_come_here.mp4" type="video/mp4">
+                        <source data-src="assets\mocha-generation\1p_mediumshot_actioncontrol\3_man_facing_left_cowboy_raise_gun_mocking.mp4" type="video/mp4">
                     </video>
                     <span class="video-title-3x3" style="font-size: 10px;">
                         <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
@@ -1023,6 +1024,7 @@
 </section>
 
 
+
 <!-- 1P emotion control -->
 <section class="section hero is-small pl-0 pr-0 is-black" style="background-color: black">
     <div class="container is-max-desktop">
@@ -1049,29 +1051,110 @@
                 <div class="carousel-row-3x3">
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/angry.mp4" type="video/mp4">
+                            <source data-src="assets\mocha-generation\1p_emotion\1_facingcamera_man_guitar_cry.mp4" type="video/mp4">
                         </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                            "A man is singing and playing the guitar in a recording studio. He is speaking to the camera with a sad expression, tears streaming down his face. The background is blurred, revealing a black wall decorated with several playing cards, illuminated by a bright light shining from the right side. The man has deeply pigmented brown skin and short black hair. He is wearing a white and black checkered shirt and black headphones. He holds a silver guitar in his hands. As the video progresses, he speaks with a sad expression, tears in his eyes, while his head and body move rhythmically in sync with the music. His expression remains deeply focused and emotionally engaged throughout the video. The camera remains static, capturing his performance directly from the front."
                         </span>
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_closeup_emotioncontrol/2.mp4" type="video/mp4"> 
+                            <source data-src="assets\mocha-generation\1p_emotion\2_facingcamera_man_guitar_happy.mp4" type="video/mp4"> 
                         </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                            "A man is singing and playing the guitar in a recording studio, speaking to the camera, his face glowing with joy. The background is blurred, revealing a black wall decorated with several playing cards, illuminated by a bright light shining from the right side. The man has deeply pigmented brown skin and short black hair. He is wearing a white and black checkered shirt and black headphones. He holds a silver guitar in his hands. As the video progresses, he speaks with a joyful expression. His head and body move rhythmically, matching the tempo of the music. His expression remains bright and full of energy throughout the video. The camera is static, capturing his performance directly from the front"
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                    </div>
+
+                </div>
+                               
+                <!-- Row 5: 4 videos -->
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\9_facingcamera_old_man_paris_happy.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "An extreme close-up of a gray-haired man with a beard in his 60s. The man is speaking while looking to the right of the frame with a slight smile, his expression filled with warmth and quiet joy as he sits at a cafe in Paris. His eyes, bright with curiosity, focus on people offscreen as they walk by, a gentle smile forming as if savoring the moment. He is dressed in a wool suit coat over a button-down shirt, wearing a brown beret and glasses that add to his professorial appearance. As the video progresses, he continues speaking with an excited and happy expression. The golden cinematic light bathes his face, complementing the rich textures of the Parisian streets and city in the background, enhancing the serene and joyful atmosphere."
                         </span>
                     </div>
                     <div class="video-item video-item-3x3">
                         <video controls playsinline class="plyr-video lazy">
-                            <source data-src="assets/1p/1p_mediumshot_actioncontrol/1p_man_football_i_just_need.mp4" type="video/mp4">
+                            <source data-src="assets\mocha-generation\1p_emotion\10_facingcamera_old_man_paris_serious.mp4" type="video/mp4"> 
                         </video>
-                        <span class="video-title-3x3" style="font-size: 10px;">
-                            <!-- a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static. -->
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "An extreme close-up of a gray-haired man with a beard in his 60s. The man is speaking while looking to the right of the frame with a serious expression, his demeanor contemplative as he sits at a café in Paris. His eyes, focused and intense, follow people offscreen as they walk by, his gaze unwavering as if lost in deep thought. He is dressed in a wool suit coat over a button-down shirt, wearing a brown beret and glasses that add to his professorial appearance. As the video progresses, he continues speaking with seriousness. The golden cinematic light bathes his face, complementing the rich textures of the Parisian streets and city in the background, enhancing the atmosphere of intellectual reflection."
                         </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
                     </div>
                 </div>
+
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\25_woman_facing_right_driving_happy.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "A close-up shot of a woman sitting in the driver's seat of a car, facing slightly to the right as she speaks. The background is slightly blurred, revealing rolling fields and scattered trees bathed in the warm glow of the late afternoon sun. Her long, dark hair is tucked behind her ears, framing her bright, joyful expression. Her eyes sparkle with excitement, and a cheerful smile lifts her cheeks, radiating warmth and contentment. She wears a fitted leather jacket over a casual top. Her left hand rests firmly on the steering wheel, fingers gripping it with ease. The static camera captures her face and upper body, emphasizing her happy and carefree demeanor."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\26_woman_facing_right_driving_crying.mp4" type="video/mp4"> 
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "A close-up shot of a woman sitting in the driver's seat of a car, facing slightly to the right as she speaks. The background is slightly blurred, revealing rolling fields and scattered trees bathed in the warm glow of the late afternoon sun. Her long, dark hair is tucked behind her ears, framing her tear-streaked face. Her eyes are red and glistening with fresh tears, her brows slightly drawn together in sadness. Her lips tremble as she struggles to hold back more tears, her breathing uneven. She wears a fitted leather jacket over a casual top. Her left hand rests on the steering wheel, her grip slightly tense. The static camera captures her face and upper body, emphasizing her vulnerable and emotional state."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                    </div>
+                </div>
+
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\11_facingcamera_woman_cat_angry.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame with an angry expression. The background is slightly blurred, revealing an urban setting with warm sunlight casting a golden glow. Her tousled dark brown hair frames her face, glowing in the natural light. She is wearing a casual beige jacket. She holds her sleeping tabby cat with white and brown fur. As the video progresses, she continues speaking, her expression remaining tense with anger while still facing slightly to the right. The camera remains static throughout the video, capturing her expressive face and upper body."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\15_facingcamera_woman_cat_cry_rainy.mp4" type="video/mp4"> 
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                          "A close-up shot of a young woman embracing her cat outdoors. She is speaking while facing slightly to the right of the frame, her eyes filled with tears and her expression heavy with sorrow. Two distinct streams of tears run down her cheeks. The background is slightly blurred, revealing an urban setting with rain pouring down, droplets streaking against her face and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light. She is wearing a casual beige jacket, now slightly soaked from the rain. Her white and brown tabby cat sleeps peacefully in her arms. As the video progresses, she continues speaking while still facing slightly to the right. Her fresh tears welled up in her eyes, blending with the raindrops on her cheeks. The camera remains static throughout the video, capturing her expressive face and upper body."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                    </div>
+                </div>
+
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\17_facing_left_woman_sing_worried.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                           "A close-up shot of a young woman singing into a professional studio microphone, facing slightly to the left. The background is minimalistic, featuring a plain white wall that contrasts with her dark, flowing hair. She wears elegant gold earrings and a light-colored sleeveless top. Her expression is concerned as she delivers the song with deep emotion. The camera remains static, capturing her expressive face and subtle movements as she sings."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_emotion\18_facing_left_woman_sing_cry.mp4" type="video/mp4"> 
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                          "A close-up shot of a young woman singing into a professional studio microphone, facing slightly to the left.  Two distinct streams of tears run down her cheeks.  The background is minimalistic, featuring a plain white wall that contrasts with her dark, flowing hair. She wears elegant gold earrings and a light-colored sleeveless top. Her expression is filled with sadness, her eyes welling up with tears as she delivers the song with deep emotion. A tear escapes down her cheek. The camera remains static, capturing her expressive face and subtle movements as she sings."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -1080,7 +1163,6 @@
     <br/>
     <br/>
 </section>
-
 
 <!-- 1P Action control -->
 <section class="section hero is-small pl-0 pr-0 is-black" style="background-color: black">
@@ -1186,6 +1268,35 @@
                                         </span>
                                     </div>
                                 </div>
+
+
+                <!-- Row 5: 4 videos -->
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_mediumshot_actioncontrol\1_woman_cat_cry_rainy.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 8px;">
+                            "A medium shot of a young woman embracing her cat outdoors. She looks down at her sleeping white and brown tabby cat with a tender, sorrowful gaze, then slowly lifts her eyes and turns to face slightly to the right of the frame. Her expression is heavy with sadness, and two streams of tears trail down her cheeks. After a moment, she lowers her gaze again to her cat, her eyes filled with emotion. Rain pours steadily, mingling with the tears and dampening her tousled dark brown hair. The overcast sky casts a cool, muted light over the softly blurred urban backdrop. She wears a casual beige jacket, now soaked from the rain. The camera remains static, capturing her expressive face and upper body in a single steady frame."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_mediumshot_actioncontrol\2_woman_anime_comb_hair.mp4" type="video/mp4"> 
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 10px;">
+                            "In an anime-style medium shot set against a clear blue sky dotted with soft, puffy clouds, a young woman with vibrant orange hair and expressive brown eyes is shown. She has a slender yet athletic build, dressed in a fitted black outfit that highlights her dynamic presence. The camera frames her from the waist up, leaving a bit of headroom. Her facial features balance soft and sharp lines, and she wears a gentle, inviting smile. As the video progress, she raises her hand to comb her hair back, her bright orange locks swaying gently in the breeze."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_mediumshot_actioncontrol\4_woman_right_throw_teddy.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 10px;">
+                            "A medium shot of a woman standing in a modern house, facing slightly to the right as she speaks. She has an angry expression, her brows furrowed, and her eyes burning with intensity. Her posture is tense. The background is slightly blurred, showing sleek furniture, large windows, and warm ambient lighting. Her shoulder-length dark hair frames her face, and her eyes sparkle. She is dressed in a stylish beige blouse. In her right hand, she grips a teddy bear tightly. Suddenly, she throws it away with force. As the video progresses, she continues speaking to the camera with an angry expression, still facing slightly to the right. The static camera captures her face and upper body."
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </tbody>
@@ -1514,302 +1625,109 @@
 </section>
 
 
-<!-- End section-->
-<!-- <section class="section hero is-light">
+<!-- Text 2 Video + Audio Cases --> 
+<section class="section hero is-small pl-0 pr-0 is-black" style="background-color: black">
     <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Qualitative Comparison: VideoJAM vs. the Base Model (DiT-30B)</h2>
-            <div class="content has-text-justified">
-              <p>
-                We provide an apples-to-apples qualitative comparison between <strong>VideoJAM and the base model it was fine-tuned from, DiT-30B.</strong>
-                <br>
-                <strong>Use the arrows to navigate through the results.</strong>
-              </p>
-              <br>
-            </div>
+          <div class="column is-full">
+            <h2 id="text2video" class="title is-3" style="font-family: 'Roboto', sans-serif;">Text → Video + Audio</h2>
           </div>
         </div>
-      </div>
+    </div>
+    <div style="background-color: black; padding: 40px; color: white; font-family: 'Roboto', sans-serif; text-align: left;">
+        <p>
+            We provide a pipeline solution that directly generates video and audio from text (similar to the setting of Veo 3).
+            <br>
+            We first feed the character's spoken text description into a TTS model to synthesize speech.
+            <br>
+            Then, we provide both the text prompt and the generated audio to MoCha for video generation.
+            <br>
+            Below is an example generated using MoCha in combination with the OpenAI TTS model.
+        </p>
+    </div>
+              
+    
       <table width="100%" align="center">
         <tbody>
             <div id="results-carousel" class="carousel results-carousel-3x3">
-                    Carousel Item 1 (4 videos)
-                    <div class="carousel-item carousel-item-3x3">
-                        <div class="carousel-row-3x3">
-                        <div class="video-item video-item-2x2">
-                                <video autoplay loop muted playsinline class="lazy">
-                                    <source data-src="assets/concat_labeled/A_ballet_dancer_twirls_gracefully_in_a_meadow_at_sunrise,_their_movements_soft_and_flowing_like_the_morning_breeze..mp4" type="video/mp4">
-                                </video>
-                                <div class="video-title-3x3">A ballet dancer twirls gracefully in a meadow at sunrise, their movements soft and flowing like the morning breeze.</div>
-                            </div>
-                        <div class="video-item video-item-2x2">
-                                <video autoplay loop muted playsinline class="lazy">
-                                    <source data-src="assets/concat_labeled/A_dog_jumping_over_a_wooden_hurdle._Slow_motion..mp4" type="video/mp4">
-                                </video>
-                                <div class="video-title-3x3">A dog jumping over a wooden hurdle. Slow motion.</div>
-                            </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                        <div class="video-item video-item-2x2">
-                                <video autoplay loop muted playsinline class="lazy">
-                                    <source data-src="assets/concat_labeled/An_acrobat_executing_a_one-arm_handstand_on_a_narrow_beam_above_water.2.mp4" type="video/mp4">
-                                </video>
-                                <div class="video-title-3x3">An acrobat executing a handstand on a narrow beam above water.</div>
-                            </div>
-                        <div class="video-item video-item-2x2">
-                                <video autoplay loop muted playsinline class="lazy">
-                                    <source data-src="assets/concat_labeled/Close-up_of_a_sushi_chef_slicing_sashimi_with_deliberate,_smooth_movements..mp4" type="video/mp4">
-                                </video>
-                                <div class="video-title-3x3">Close-up of a sushi chef slicing sashimi with deliberate, smooth movements.</div>
-                            </div>
-                        </div>
+            
+            <!-- Carousel Item 1 (3 rows of 3 videos) -->
+            <div class="carousel-item carousel-item-3x3">
+                <!-- Row 1: 3 videos -->
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
                     </div>
-    
-                    Carousel Item 2 (4 videos)
-                    <div class="carousel-item carousel-item-3x3">
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_basketball_spins_as_it_arcs_through_the_air_in_an_empty_gym,_bouncing_off_the_backboard_and_falling_into_the_hoop..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A basketball spins as it arcs through the air in an empty gym, bouncing off the backboard and falling into the hoop.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_monkey_performs_a_360_spin_on_a_skateboard_at_the_skate_park,_landing_smoothly..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A monkey performs a 360 spin on a skateboard at the skate park, landing smoothly.</div>
-                        </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_dolphin_and_a_seal_playing_volleyball_with_a_beach_ball,_using_their_noses_to_pass_it_back_and_forth.2.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A dolphin and a seal playing volleyball with a beach ball.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_gymnast_performs_a_smooth_aerial_somersault_on_a_grassy_hill_at_sunrise..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A gymnast performs a smooth aerial somersault on a grassy hill at sunrise.</div>
-                            </div>
+                    <div class="video-item video-item-3x3">
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets\mocha-generation\1p_mediumshot_actioncontrol\10_woman_outdoor_rasing_palm.mp4" type="video/mp4">
+                        </video>
+                        <span class="video-title-3x3" style="font-size: 11px;">
+                            "Remember. With great power comes great responsibility" + "A beautiful woman, aged between 25 and 35, is dressed in a professional yet chic outfit, emphasizing her intellectual character. She exudes a sense of sophistication and confidence. The spring and autumn seasons are reflected in her attire, which could be a stylish blazer paired with a fashionable blouse, marking her as a host. She is captured in an outdoor setting on a high-end street, possibly lined with upscale boutiques or cafes. Despite being outside, she maintains a professional demeanor, gesturing with her hands while speaking. She raises her right hand slightly, palm facing outward. She speaks into a microphone or engages with an unseen audience, showing her poise and eloquence as a host."
+                        </span>
+                    </div>
+                    <div class="video-item video-item-3x3">
                     </div>
                 </div>
-                    
-                    Carousel Item 3 (4 videos)
-                    <div class="carousel-item carousel-item-3x3">
-                    <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/Side_view_of_a_woman_twirls_a_hula_hoop_around_her_waist_in_a_park_during_sunset..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">Side view of a woman twirls a hula hoop around her waist in a park during sunset.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/An_otter_riding_rollerblades_on_two_legs_in_a_bustling_city_park,_twirling_past_picnicking_families..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">An otter riding rollerblades on two legs in a bustling city park, twirling past picnicking families.</div>
-                        </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/At_the_edge_of_a_roaring_waterfall,_a_boxer_practices_jabs_and_hooks_on_a_punching_bag,_sweat_dripping_as_he_refines_his_technique.2.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">At the edge of a roaring waterfall, a boxer practices jabs and hooks on a punching bag, sweat dripping as he refines his technique.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_close-up_of_a_runner_s_legs_as_they_dash_through_a_rainstorm,_their_shoes_splashing_through_puddles_as_they_push_forward_with_determination.4.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A close-up of a runner's legs as they dash through a rainstorm, their shoes splashing through puddles as they push forward with determination.</div>
-                        </div>
-                    </div>
-                    </div>
-
-                    Carousel Item 4 (4 videos)
-                    <div class="carousel-item carousel-item-3x3">
-                    <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_woman_doing_push-up_exercise..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A woman doing push-up exercise.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_giraffe_stepping_gingerly_along_a_tightrope_above_a_city_plaza,_drawing_gasps_from_the_crowd_below..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A giraffe stepping gingerly along a tightrope above a city plaza, drawing gasps from the crowd below.</div>
-                        </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_person_leaps_and_spins_joyfully_on_the_crystal-clear_surface_of_the_lake,_their_reflection_rippling_gently_with_every_movement_as_dawn_breaks_on_the_horizon..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A person leaps and spins joyfully on the crystal-clear surface of the lake, their reflection rippling gently with every movement as dawn breaks on the horizon.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_bear_wobbling_slightly_as_it_rides_a_bicycle_down_a_forest_trail,_its_paws_gripping_the_seat_for_balance.5.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A bear wobbling slightly as it rides a bicycle down a forest trail, its paws gripping the seat for balance.</div>
-                        </div>
-                    </div>
-                </div>
-
-                    Carousel Item 5 (4 videos)
-                    <div class="carousel-item carousel-item-3x3">
-                    <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_horse_gallops_across_a_field,_its_mane_flowing_in_the_wind_as_it_leaps_over_a_wooden_fence..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A horse gallops across a field, its mane flowing in the wind as it leaps over a wooden fence.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_gymnast_doing_a_handstand_on_a_sandy_beach_at_sunset..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A gymnast doing a handstand on a sandy beach at sunset.</div>
-                        </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_man_enjoying_a_leisurely_bike_ride_along_a_road_next_to_a_body_of_water_during_a_sunset..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A man enjoying a leisurely bike ride along a road next to a body of water during a sunset.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_penguin_slides_down_a_snowy_hill_on_its_belly,_cheering_with_tiny_flippers_in_the_air..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A penguin slides down a snowy hill on its belly, cheering with tiny flippers in the air.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item carousel-item-3x3">
-                    Carousel Item 6 (4 videos)
-                    <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_dancer_leaps_across_a_stage_at_sunset,_golden_confetti_fluttering_around_them.2.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A dancer leaps across a stage at sunset, with golden confetti fluttering around them.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_snowboarder_navigates_a_snow-covered_mountain_trail,_dodging_tall_pine_trees._They_leap_off_a_small_hill,_executing_a_mid-air_spin_before_landing_gracefully_and_continuing_their_descent.3.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A snowboarder navigates a snow-covered mountain trail, dodging tall pine trees. They leap off a small hill, executing a mid-air spin before landing gracefully and continuing their descent.</div>            
-                        </div>
-                        </div>
-                        <div class="carousel-row-3x3">
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_man_holding_a_headstand_on_a_yoga_mat_in_a_quiet_studio..mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A man holding a headstand on a yoga mat in a quiet studio.</div>
-                        </div>
-                       <div class="video-item video-item-2x2">
-                            <video autoplay loop muted playsinline class="lazy">
-                                <source data-src="assets/concat_labeled/A_weightlifter_performs_a_deadlift_with_perfect_form_in_a_concrete_garage_gym.mp4" type="video/mp4">
-                            </video>
-                            <div class="video-title-3x3">A weightlifter performs a deadlift with perfect form in a concrete garage gym.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </tbody>
-    </table>
-</section> -->
-
-<!-- <section class="section hero is-small">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">How does it work?</h2>
-            <div class="content has-text-justified">
-              <p>
-                We present <strong>VideoJAM</strong>, a framework that explicitly instills a strong motion
-                prior to any video generation model.  </p>
-                VideoJAM is constructed of two units; (a) <strong>Training.</strong>  Given an input video <em>x<sub>1</sub></em> and its motion
-representation <em>d<sub>1</sub></em>, both signals are noised and embedded to a single, joint latent representation using a linear layer, <em>W<sub>in</sub><sup>+</sup></em>. The diffusion
-model processes the input, and two linear projection layers predict both appearance and motion from the joint representation (<em>W<sub>out</sub><sup>+</sup></em>).
-<br/>
-(b) <strong>Inference.</strong>
-We propose <strong>Inner-Guidance,</strong> where the model’s own noisy motion prediction is used to guide the video prediction at each step.
-            </p>
-              <br/>
-            </div>
-          </div>
-        </div>
-        <div class="full-width-container">
-            <img src="assets/method_figure.jpg" class="responsive-img"/>
-          </div>
-    </div>
-</section> -->
-<!-- End section-->
-
-
-<!-- <section class="section hero is-black">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">MoCha-bench: Qualitative Comparison</h2>
-            <div class="content has-text-justified">
-              <p>
-                We enclose qualitative comparisons to the leading baselines (SadTalker, Aniportrait, Hallo3) on representative prompts from our MoCha benchmark.
-              </p>
-              <br/>
-            </div>
-          </div>
-        </div>
-      </div>
-
-<table width="100%" align="center">
-    <tbody>
-        <div class="carousel-row-3x3">
-            <div class="video-item video-item-3x3">
-                <div class="new-text-prompt">MoCha</div>
-                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
-                    <source data-src="assets/comparison_with_baseline/man_talk.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="video-item video-item-3x3">
-                <div class="new-text-prompt">Hallo3</div>
-                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
-                    <source data-src="assets/comparison_with_baseline/Hallo3.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="video-item video-item-3x3">
-                <div class="new-text-prompt">Aniportrait</div>
-                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
-                    <source data-src="assets/comparison_with_baseline/aniportrait_crop.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="video-item video-item-3x3">
-                <div class="new-text-prompt">SadTalker</div>
-                <video controls playsinline class="lazy" style="height: 200px; width: auto;">
-                    <source data-src="assets/comparison_with_baseline/aniportrait_resize.mp4" type="video/mp4">
-                </video>
             </div>
         </div>
     </tbody>
-</table>
-<td align="center" style="width: 100%; padding: 0;">
-    <span class="video-title-3x3" style="font-size: 15px;">
-        a man with fair skin and brown hair standing in front of a screen displaying x-rays. He is wearing a blue jacket over a plaid shirt, and he has a short beard and mustache. The man is speaking while looking to the right of the frame, his mouth slightly open as if he is mid-sentence. His gaze is directed towards something off-camera, and his expression appears serious or concerned. The background features a large screen with a black border, displaying various x-ray images of skeletons and other medical scans. The overall atmosphere suggests that the man is engaged in a professional or educational setting, possibly discussing medical topics or presenting information to an audience. Throughout the video, the camera is static.
-    </span>
-</td> -->
-<!-- </section> -->
+    </table>
+    <br/>
+    <br/>
+</section>
+
+
+<!-- Failure Cases --> 
+<section class="section hero is-small pl-0 pr-0 is-black" style="background-color: black">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <h2 class="title is-3"  style="font-family: 'Roboto', sans-serif;">Failure Cases</h2>
+          </div>
+        </div>
+      </div>
+    
+      <table width="100%" align="center">
+        <tbody>
+            <div id="results-carousel" class="carousel results-carousel-3x3">
+            
+            <!-- Carousel Item 1 (3 rows of 3 videos) -->
+            <div class="carousel-item carousel-item-3x3">
+                <!-- Row 1: 3 videos -->
+                <div class="carousel-row-3x3">
+                    <div class="video-item video-item-3x3">
+                        <span class="video-title-3x3" style="font-size: 11px;">
+                            If the caption is too vague and doesn't describe the facial attribute or shot type, the model may generate a wide shot where the character is far from the camera, making lip sync difficult to observe. For example, the prompt 'A man playing skateboard at a skatepark'.
+                        </span>
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/failure_case/1_man_skateboard.MP4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <span class="video-title-3x3" style="font-size: 11px;">
+                            When multiple characters appear in the same scene, sometimes the lip-sync quality is degraded when character is far from the camera. Potentially due to limited training data. For example, the prompt:"A medium shot set in a dimly lit tavern. The central figure, a rugged man with long, wet-looking hair and a thick beard, sits on a rustic wooden bench. He wears a weathered wool cloak over leather armor, evoking the image of a battle-hardened warrior. His expression is intense as he speaks, holding a short sword in his right hand. To his left, another man with tied-back hair and fur-lined garments watches him closely."
+                        </span>
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/failure_case/30_man_sword_tavern.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-item video-item-3x3">
+                        <span class="video-title-3x3" style="font-size: 11px;">
+                             When increasing the speech CFG from the default value of 7.5 to 12, the model tends to generate overly expressive characters. For example: 'A tracking shot circling around the man as he ties a tie over his blue suit. He speaks to the camera while adjusting the knot, maintaining eye contact throughout.'
+                        </span>
+                        <video controls playsinline class="plyr-video lazy">
+                            <source data-src="assets/failure_case/man_tie.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </tbody>
+    </table>
+    <br/>
+    <br/>
+</section>
+
 
 <!--BibTex citation -->
 
